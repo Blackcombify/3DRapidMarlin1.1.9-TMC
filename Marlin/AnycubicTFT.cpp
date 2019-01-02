@@ -234,9 +234,9 @@ void AnycubicTFTClass::HandleSpecialMenu()
   } else if (strcmp(SelectedDirectory, "<z move down 0.1>")==0) {
     SERIAL_PROTOCOLLNPGM("Special Menu: Z move Down 0.1");
     enqueue_and_echo_commands_P(PSTR("G91\nG1 Z-0.1\nG90"));
-	} else if (strcmp(SelectedDirectory, "<Mesh Test Pattern>")==0) {
+	} else if (strcmp(SelectedDirectory, "<mesh test pattern>")==0) {
     SERIAL_PROTOCOLLNPGM("Special Menu: Mesh Test Pattern");
-    enqueue_and_echo_commands_P(PSTR("G28\G26 C B55 H200 P25 R25"));
+    enqueue_and_echo_commands_P(PSTR("G28\nG26 C B55 H200 P25 R25"));
   } else if (strcmp(SelectedDirectory, "<exit>")==0) {
     SpecialMenu=false;
   }
@@ -266,24 +266,21 @@ void AnycubicTFTClass::Ls()
         ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Next Mesh Point>");
         ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Save EEPROM>");
         ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Save EEPROM>");
-		ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Mesh Test Pattern>");
-		ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Mesh Test Pattern>");
-        break;
+		    break;
 
       case 8: // Third Page
-        ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Exit>");
-        ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Exit>");
+      
         ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Auto Tune Hotend PID>");
         ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Auto Tune Hotend PID>");
         ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Auto Tune Hotbed PID>");
         ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Auto Tune Hotbed PID>");
         ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Load Stored EEPROM>");
         ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Load Stored EEPROM>");
+        ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Mesh Test Pattern>");
+        ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Mesh Test Pattern>");
         break;
         
 		case 12: //  Page 4
-		ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Mesh Test Pattern>");
-		ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Mesh Test Pattern>");
         ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Exit>");
         ANYCUBIC_SERIAL_PROTOCOLLNPGM("<Exit>");
      
